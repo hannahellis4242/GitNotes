@@ -58,11 +58,38 @@ The first thing you will want to do is identify the directory you want to put un
 
 Once your terminal is in your directory, you can use the following command to create your local repository.
 
-```git init```
+``` bash
+git init
+```
 
 That is it. You now have a local reposity you can work with. This repository is currently empty and knows nothing about the files you might already have in your working directory. Additionaly your staging are is also empty.
 
+Before we start looking at adding changes to the staging area, let's have a look at what things look like currently to git. It is often useful to be able to see what git knows about your working directory and what state things are in generally. The command that can tell you about the status of git is simpliy
 
+``` bash
+git status
+```
+
+As an example here is what `git status` tells me after initialising an empty working directory
+
+``` bash
+working % git status 
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+```
+
+Just to disect this a little bit. The first line tells you which branch you are on. Don't worry about branches for now, we will cover those in a later section. The next line tells you about commits, this we will cover those shortly. The last line tess you that there's no changes in your working directory.
+
+### Adding files to the staging area
+
+Since we don't have any changes yet[^1] , we should make some. With and editor make a new file, let's call it "my_new_file.txt" and inside it we will add the text
+
+> This is my first file
+
+[^1]: Maybe you do already if you didn't start with an empty directory, don't worry we'll get onto adding these soon.
 
 ### Summary
 
