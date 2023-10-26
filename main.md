@@ -88,15 +88,44 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-Just to disect this a little bit. The first line tells you which branch you are on. Don't worry about branches for now, we will cover those in a later section. The next line tells you about commits, this we will cover those shortly. The last line tess you that there's no changes in your working directory.
+Just to disect this a little bit. The first line tells you which branch you are on. Don't worry about branches for now, we will cover those in a later section. The next line tells you about commits, this we will cover those shortly. The last line tells you that there's no changes in your working directory.
+
+The usage of git status can go a little bit further too. You can provide a file or a directory after the command if you only want to know about the status of that one file or directory, the command looks like this
+
+```bash
+git status <file or directory>
+```
+
+where you replace `<file or directory>` with whichever file or directory you wish.
 
 ### Adding files to the staging area
 
-Since we don't have any changes yet[^1] , we should make some. With and editor make a new file, let's call it "my_new_file.txt" and inside it we will add the text
+Since we don't have any changes yet[^1], we should make some. With and editor make a new file, let's call it "my_new_file.txt" and inside it we will add the text
 
 > This is my first file
 
 [^1]: Maybe you do already if you didn't start with an empty directory, don't worry we'll get onto adding these soon.
+
+Once you have made this change and saved it. You will now have a change in your working directory. Let's see what git thinks of it by running git status once again.
+
+```bash
+working % git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	my_new_file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+You now see the new file under the untract files list. This means that there are changes in the working directory that have not yet in the staging area in git. So our next step is to add this file. The commnand for this is
+
+```bash
+git add
+```
 
 ### Summary
 
