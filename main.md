@@ -143,11 +143,20 @@ Changes to be committed:
 	new file:   my_new_file.txt
 ```
 
+As you can see the file has moved from *Untracked files* to *Changes to be committed*. This means your changes are now in the staging area.
+
+You can choose to make more changes if you like, but these changes won't end up in the staging area until you add them again. This is because your file is now partly under git's control. You've added it to the staging area and so git remembers the changes made when it was added.
+
+### Removing files from the staging area
+
+It's quite possible that you've added files to the staging area you did not mean to. For example you might have added an entire directory but you only meant to add some of the changes inside that directory.
+
 ### Summary
 
 In this section we have seen
 
 - How to create a local repository using the `git init` command.
+- How to add changes to the staging area using the `git add` command.
 
 ## Creating an account on Github
 
