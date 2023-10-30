@@ -149,7 +149,23 @@ You can choose to make more changes if you like, but these changes won't end up 
 
 ### Removing files from the staging area
 
-It's quite possible that you've added files to the staging area you did not mean to. For example you might have added an entire directory but you only meant to add some of the changes inside that directory.
+It's quite possible that you've added files to the staging area you did not mean to. For example you might have added an entire directory but you only meant to add some of the changes inside that directory. Although adding your files puts them more under git's control, you still have some control at this stage. As well as adding changes you can also remove them by using the following command
+
+```bash
+git reset
+```
+
+Just like with `git add` you will need to follow this by a list of files or directories you wish to remove from the staging area.
+
+Let's go through an example together.
+
+With and editor make another new file, let's call it "some_changes_i_do_not_want.txt" and inside it we will add the text
+
+> I do not wish to add these changes
+
+Once you have made this change and saved it, and then use `git add` to add this file to the staging area[^1].
+[^1]: Hopefully you should be able to do this by yourself now. Feel free to look back if you need a reminder.
+
 
 ### Summary
 
