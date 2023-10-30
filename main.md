@@ -127,6 +127,22 @@ You now see the new file under the untract files list. This means that there are
 git add
 ```
 
+This command takes a filename or a directory or a list of files/directories after it. This tells git to add the listed files or directories to the staging area.
+
+Let's do that now. To add the single file we have so far type `git add my_new_file.txt` into the command line and press enter.
+Now when we do `git status` we see the following.
+
+```bash
+working % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   my_new_file.txt
+```
+
 ### Summary
 
 In this section we have seen
