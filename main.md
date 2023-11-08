@@ -123,7 +123,7 @@ No commits yet
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	my_new_file.txt
+ my_new_file.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
@@ -132,7 +132,7 @@ Now that we have some changes, lets continue to see what we can do with them.
 
 ### Checking the differences
 
-Now that you have a change in your working directory, you can get git to show you the difference between what is in your working directory and what is in the staging area (more about the staging area later). To show the difference you can use 
+Now that you have a change in your working directory, you can get git to show you the difference between what is in your working directory and what is in the staging area (more about the staging area later). To show the difference you can use
 
 ```bash
 git diff
@@ -141,6 +141,18 @@ git diff
 As with many git commands you can include a list of files or directories at the end of this command to just see those differences. Right now because we're just adding a new file, we won't see any differences being shown. We will revisit this command in a later section after we've added some changes to the staging area.
 
 ### Removing a change from your working directory
+
+If you wish to remove a change from your working directory, then you can use the command
+
+```bash
+git checkout .
+```
+
+The above command will checkout the last commited version of your files and wipe any changes you made. Be careful with this command as it is shown above it will wipe all your changes (that's what the dot after checkout means) with no way to get them back.
+
+If you need to just remove the changes for one file or directory, then list it after the command, like so `git checkout <filename>` without a dot and a filename instead.
+
+We won't go through an example here, but you will see `git checkout` in action more later as it is actually a little more powerful than stated here.
 
 ### Adding files to the staging area
 
@@ -158,12 +170,12 @@ No commits yet
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-	my_new_file.txt
+ my_new_file.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-You now see the new file under the untract files list. This means that there are changes in the working directory that have not yet in the staging area in git. So our next step is to add this file. The commnand for this is
+You now see the new file under the untracked files list. This means that there are changes in the working directory that have not yet in the staging area in git. So our next step is to add this file. The commnand for this is
 
 ```bash
 git add
@@ -182,16 +194,60 @@ No commits yet
 
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
-	new file:   my_new_file.txt
+ new file:   my_new_file.txt
 ```
 
-As you can see the file has moved from *Untracked files* to *Changes to be committed*. This means your changes are now in the staging area.
+As you can see the file has moved from _Untracked files_ to _Changes to be committed_. This means your changes are now in the staging area.
 
 You can choose to make more changes if you like, but these changes won't end up in the staging area until you add them again. This is because your file is now partly under git's control. You've added it to the staging area and so git remembers the changes made when it was added.
 
 #### git diff revisited
 
 If you do make more changes (which we will do in this section), then you can see them using `git diff`.
+
+We will make the additional change to add a new line to _my_new_file.txt_ saying the following
+ > adding a new line
+
+If you do `git status` again you will see the following
+
+```bash
+working % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+ new file:   my_new_file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+ modified:   my_new_file.txt
+```
+
+As you can see `git status` is telling us that there's been additonal changes sice we added changes before and giving us some commands to use depending if we wanted to add these changes on top of our current ones or remove them.
+
+Right now though we're going to check out our differences using `git diff`
+
+```bash
+working % git diff
+diff --git a/my_new_file.txt b/my_new_file.txt
+index dba0775..a175209 100644
+--- a/my_new_file.txt
++++ b/my_new_file.txt
+@@ -1 +1,2 @@
+ This is my first file
++adding a new line
+```
+
+As you can see the difference is showing that we've added a new line. This difference is pretty simple. Differences can get pretty complex quite quickly. If you have an editor that can show you differences in git, it's worth using it due to the complextity. It it is also worth being able to use the command line to check differences too just in case you find you can't use an editor.
+
+Since we don't wish to keep this change do the following
+
+```bash
+git restore my_new_file.txt
+```
 
 ### Removing files from the staging area
 
@@ -231,6 +287,7 @@ Once you have changes in the staging area you can commit them. Note here that a 
 In this section we have seen
 
 - How to create a local repository using the `git init` command.
+- How to remove changes from our working directory with the `git checkout` command.
 - How to add changes to the staging area using the `git add` command.
 
 ## Creating an account on Github
