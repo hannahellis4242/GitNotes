@@ -13,8 +13,14 @@ By Hannah Ellis
   - [The Remote Repository](#the-remote-repository)
 - [Working locally](#working-locally)
   - [Initilising your Local Repository](#initilising-your-local-repository)
+  - [Making changes to your working directory](#making-changes-to-your-working-directory)
+  - [Checking the differences](#checking-the-differences)
+  - [Removing a change from your working directory](#removing-a-change-from-your-working-directory)
   - [Adding files to the staging area](#adding-files-to-the-staging-area)
+    - [git diff revisited](#git-diff-revisited)
   - [Removing files from the staging area](#removing-files-from-the-staging-area)
+  - [Commiting changes](#committing-changes)
+    - [Showing changes between the last commit and the current staging area](#showing-changes-between-the-last-commit-and-the-current-staging-area)
   - [Summary](#summary)
 - Creating an account on Github
 - Creating a repository locally
@@ -99,6 +105,43 @@ git status <file or directory>
 
 where you replace `<file or directory>` with whichever file or directory you wish.
 
+### Making changes to your working directory
+
+If you are working from an empty directory then you won't have any changes yet. If you already do because you didn't start with an empty directory, then feel free to jump to the next section.
+
+If you do not have any changes yet then with your favorite editor make a new file, let's call it "my_new_file.txt" and inside it we will add the text
+
+> This is my first file
+
+Once you have made this change and saved it. You will now have a change in your working directory. Let's see what git thinks of it by running git status once again.
+
+```bash
+working % git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	my_new_file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Now that we have some changes, lets continue to see what we can do with them.
+
+### Checking the differences
+
+Now that you have a change in your working directory, you can get git to show you the difference between what is in your working directory and what is in the staging area (more about the staging area later). To show the difference you can use 
+
+```bash
+git diff
+```
+
+As with many git commands you can include a list of files or directories at the end of this command to just see those differences. Right now because we're just adding a new file, we won't see any differences being shown. We will revisit this command in a later section after we've added some changes to the staging area.
+
+### Removing a change from your working directory
+
 ### Adding files to the staging area
 
 Since we don't have any changes yet (maybe you do already if you didn't start with an empty directory, don't worry we'll get onto adding these soon.), we should make some. With and editor make a new file, let's call it "my_new_file.txt" and inside it we will add the text
@@ -146,6 +189,10 @@ As you can see the file has moved from *Untracked files* to *Changes to be commi
 
 You can choose to make more changes if you like, but these changes won't end up in the staging area until you add them again. This is because your file is now partly under git's control. You've added it to the staging area and so git remembers the changes made when it was added.
 
+#### git diff revisited
+
+If you do make more changes (which we will do in this section), then you can see them using `git diff`.
+
 ### Removing files from the staging area
 
 It's quite possible that you've added files to the staging area you did not mean to. For example you might have added an entire directory but you only meant to add some of the changes inside that directory. Although adding your files puts them more under git's control, you still have some control at this stage. As well as adding changes you can also remove them by using the following command
@@ -172,6 +219,12 @@ git reset some_changes_i_do_not_want.txt
 ```
 
 Now if you do `git status` you will see that this file is no longer in the staging area.
+
+### Committing changes
+
+Once you have changes in the staging area you can commit them. Note here that a commit is hard to change, so you should make sure that the changes in the staging area are changes you want to commit.
+
+#### Showing changes between the last commit and the current staging area
 
 ### Summary
 
