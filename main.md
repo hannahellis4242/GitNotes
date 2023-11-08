@@ -4,17 +4,17 @@ By Hannah Ellis
 
 ## Content
 
-- Who is this book for?
-- What is Git
-- The Structure of Git
-  - The Working Directory
-  - The Staging Area (Also know as the index)
-  - The Local Repository
-  - The Remote Repository
-- Working locally
-  - Initilising your Local Repository
-  - Adding files to the staging area
-  - Summary
+- [Who is this book for?](#who-is-this-book-for)
+- [What is Git?](#what-is-git)
+- [The Structure of Git](#the-structure-of-git)
+  - [The Working Directory](#the-working-directory)
+  - [The Staging Area (Also know as the index)](#the-staging-area-also-know-as-the-index)
+  - [The Local Repository](#the-local-repository)
+  - [The Remote Repository](#the-remote-repository)
+- [Working locally](#working-locally)
+  - [Initilising your Local Repository](#initilising-your-local-repository)
+  - [Adding files to the staging area](#adding-files-to-the-staging-area)
+  - [Summary](#summary)
 - Creating an account on Github
 - Creating a repository locally
 - Setting up a remote on a local repository
@@ -22,7 +22,7 @@ By Hannah Ellis
 
 ## Who is this book for?
 
-## What is Git
+## What is Git?
 
 ## The Structure of Git
 
