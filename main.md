@@ -14,6 +14,7 @@ By Hannah Ellis
 - [Working locally](#working-locally)
   - [Initilising your Local Repository](#initilising-your-local-repository)
   - [Adding files to the staging area](#adding-files-to-the-staging-area)
+  - [Removing files from the staging area](#removing-files-from-the-staging-area)
   - [Summary](#summary)
 - Creating an account on Github
 - Creating a repository locally
@@ -100,11 +101,9 @@ where you replace `<file or directory>` with whichever file or directory you wis
 
 ### Adding files to the staging area
 
-Since we don't have any changes yet[^1], we should make some. With and editor make a new file, let's call it "my_new_file.txt" and inside it we will add the text
+Since we don't have any changes yet (maybe you do already if you didn't start with an empty directory, don't worry we'll get onto adding these soon.), we should make some. With and editor make a new file, let's call it "my_new_file.txt" and inside it we will add the text
 
 > This is my first file
-
-[^1]: Maybe you do already if you didn't start with an empty directory, don't worry we'll get onto adding these soon.
 
 Once you have made this change and saved it. You will now have a change in your working directory. Let's see what git thinks of it by running git status once again.
 
@@ -163,9 +162,16 @@ With and editor make another new file, let's call it "some_changes_i_do_not_want
 
 > I do not wish to add these changes
 
-Once you have made this change and saved it, and then use `git add` to add this file to the staging area[^1].
-[^1]: Hopefully you should be able to do this by yourself now. Feel free to look back if you need a reminder.
+Once you have made this change and saved it, and then use `git add` to add this file to the staging area.
+Hopefully you should be able to do this by yourself now. Feel free to look back if you need a reminder, and to use `git status` if you want to check that it has been added.
 
+Now that you have added this file, we shall now remove it from the staging area by using the following command
+
+```bash
+git reset some_changes_i_do_not_want.txt
+```
+
+Now if you do `git status` you will see that this file is no longer in the staging area.
 
 ### Summary
 
